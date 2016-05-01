@@ -13,12 +13,12 @@ class IncomeDisplay(incomes: List[Income]) {
         case _ =>
       }
     }
-   traverse(incomes)
+   traverse(incomes.sortBy(_.monthlyIncome).reverse)
   }
 
   private def formatSalary(income: Income) = {
-    s"${income.freelanceCriterias.freelanceCost} euros/jour, ${income.freelanceCriterias.charges.round} euros de frais, " +
-      s"${income.freelanceCriterias.monthlySalaryAmount.round} de salaire net par mois : ${income.annualIncome.round}/an =>  ${income.monthlyIncome.round}/mois"
+    s"${income.freelanceCost} euros/jour, ${income.charges.round} euros de frais, " +
+      s"${income.monthlySalary.round} de salaire net par mois : ${income.annualIncome.round}/an =>  ${income.monthlyIncome.round}/mois"
   }
 
   private def jumpLine = {

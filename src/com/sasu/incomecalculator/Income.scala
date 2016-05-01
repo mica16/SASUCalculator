@@ -6,5 +6,6 @@ case class Income(freelanceCriteria: FreelanceCriteria, annualIncome: Double) {
   val monthlySalary = freelanceCriteria.monthlySalary
   val freelanceCost = freelanceCriteria.freelanceCost
   val charges = freelanceCriteria.charges
+  val nbWorkDaysInAYear = freelanceCriteria.nbWorkDaysInAYear
 
 }

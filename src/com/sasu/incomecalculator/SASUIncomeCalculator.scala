@@ -6,7 +6,7 @@ class SASUIncomeCalculator {
     multiFreelanceCriteria match {
       case fc :: xs =>
         val dividend = new Dividend(fc)
-        val incomeTax = new TotalIncomeTax(dividend, fc.salary).value
+        val incomeTax = new TotalIncomeTax(dividend, fc).value
         Income(fc, fc.annualSalary + dividend.afterCSG - incomeTax) :: calculate(xs)
       case Nil =>  Nil
     }

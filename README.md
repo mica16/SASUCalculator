@@ -1,4 +1,4 @@
-# SASUCalculator
+# SASUIncomeCalculator
 Programme en Scala que j'ai écrit permettant de calculer les revenus Net (en poche) à partir d'une tarification Freelance, dans le cadre d'une SASU. 
 
 Exemple :  

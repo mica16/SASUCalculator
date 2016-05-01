@@ -5,7 +5,7 @@ Exemple :
 Un Freelance possédant une SASU ayant les caractéristiques suivantes :  
 _ côute 600 euros HT / jour à une entreprise     
 _ fait des fiches de paie de 2500 euros net de salaire      
-_ a 8000 euros de frais.            
+_ a 8000 euros de frais annuel.            
 
 Son revenu annuel net d'impôt est donc :       
 64987 euros/an soit 5416 euros/mois

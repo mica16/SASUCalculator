@@ -1,10 +1,10 @@
 package com.sasu.incomecalculator
 
-case class Income(freelanceCriterias: FreelanceCriterias, annualIncome: Double) {
+case class Income(freelanceCriteria: FreelanceCriteria, annualIncome: Double) {
 
   val monthlyIncome = annualIncome / 12
-  val monthlySalary = freelanceCriterias.monthlySalary
-  val freelanceCost = freelanceCriterias.freelanceCost
-  val charges = freelanceCriterias.charges
+  val monthlySalary = freelanceCriteria.monthlySalary
+  val freelanceCost = freelanceCriteria.freelanceCost
+  val charges = freelanceCriteria.charges
 
 }

@@ -1,8 +1,8 @@
 package com.sasu.incomecalculator
 
-class Dividend(freelanceCriterias: FreelanceCriterias) {
+class Dividend(freelanceCriteria: FreelanceCriteria) {
 
-  val originalValue = freelanceCriterias.freelanceCost * freelanceCriterias.nbWorkDaysInAYear - freelanceCriterias.charges - freelanceCriterias.salaryCost
+  val originalValue = freelanceCriteria.freelanceCost * freelanceCriteria.nbWorkDaysInAYear - freelanceCriteria.charges - freelanceCriteria.salaryCost
 
   private val afterIs = {
     val is = if (originalValue <= 38120)

@@ -2,14 +2,14 @@ package com.sasu.incomecalculator
 
 class Dividend(freelanceCost: Int, costs: Double, salary: Salary) {
 
-  val dividend = freelanceCost*20*12 - costs - salary.salaryCost
+  val originalValue = freelanceCost*20*12 - costs - salary.salaryCost
 
   private val afterIs = {
-    val is = if (dividend <= 38120)
-      dividend * 15 / 100
+    val is = if (originalValue <= 38120)
+      originalValue * 15 / 100
     else
-      dividend * 33.33 / 100
-    dividend - is
+      originalValue * 33.33 / 100
+    originalValue - is
   }
 
   val afterCSG = afterIs - afterIs * 15.5 / 100

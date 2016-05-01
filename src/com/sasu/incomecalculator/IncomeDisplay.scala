@@ -17,7 +17,7 @@ class IncomeDisplay(incomes: List[Income]) {
   }
 
   private def formatSalary(income: Income) = {
-    s"${income.freelanceCost} euros/jour, ${income.charges.round} euros de frais, " +
+    s"${income.freelanceCost.round} euros/jour, ${income.charges.round} euros de frais, " +
       s"${income.monthlySalary.round} de salaire net par mois, ${income.nbWorkDaysInAYear} jours travaillés : ${income.annualIncome.round}/an =>  ${income.monthlyIncome.round}/mois"
   }
 

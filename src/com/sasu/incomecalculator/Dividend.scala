@@ -4,12 +4,13 @@ class Dividend(freelanceCriteria: FreelanceCriteria) {
 
   val originalValue = freelanceCriteria.freelanceCost * freelanceCriteria.nbWorkDaysInAYear - freelanceCriteria.charges - freelanceCriteria.salaryCost
 
-  private val afterIs = {
-    val is = if (originalValue <= 38120)
-      originalValue * 15 / 100
-    else
-      originalValue * 33.33 / 100
+  private def afterIs: Double = {
     originalValue - is
+  }
+
+  private val is = {
+    val rankIntervalsList = List[(Double,Double,Double)]((0, 38120, 15), (38120, Double.MaxValue, 33.33))
+    TaxRankCalculator.calculate(originalValue, rankIntervalsList)
   }
 
   val afterCSG = afterIs - afterIs * 15.5 / 100

@@ -18,7 +18,7 @@ class SASUIncomeCalculatorSpec extends FlatSpec with Matchers with MockitoSugar 
       17091 * 14 / 100 + (invocation.getArgument(0).asInstanceOf[Float] - 26791) * 30 / 100
     })
     val calculator = new SASUIncomeCalculator(new DefaultDueAmountRulesBeforeIncomeTax(taxSocietyAmountMock), new DefaultIncomeTaxRules(taxIncomeAmountMock))
-    val income = calculator.calculate(80000, 8000, 2500)
+    val income = calculator.calculate(List(FreelanceCriteria(turnover = 80000, fees = 8000, monthlySalary = 2500)))
     income should be(Income(80000, 8000, 2500, 36755))
   }
 
@@ -30,7 +30,7 @@ class SASUIncomeCalculatorSpec extends FlatSpec with Matchers with MockitoSugar 
       17091 * 14 / 100 + (invocation.getArgument(0).asInstanceOf[Float] - 26791) * 30 / 100
     })
     val calculator = new SASUIncomeCalculator(new DefaultDueAmountRulesBeforeIncomeTax(taxSocietyAmountMock), new DefaultIncomeTaxRules(taxIncomeAmountMock))
-    val income = calculator.calculate(82000, 6000, 2300)
+    val income = calculator.calculate(List(FreelanceCriteria(turnover = 82000, fees = 6000, monthlySalary = 2300)))
     income should be(Income(82000, 6000, 2300, 40142))
   }
 
@@ -42,7 +42,8 @@ class SASUIncomeCalculatorSpec extends FlatSpec with Matchers with MockitoSugar 
       17091 * 14 / 100 + (invocation.getArgument(0).asInstanceOf[Float] - 26791) * 30 / 100
     })
     val calculator = new SASUIncomeCalculator(new DefaultDueAmountRulesBeforeIncomeTax(taxSocietyAmountMock), new DefaultIncomeTaxRules(taxIncomeAmountMock))
-    val incomes = calculator.calculateM(List[(Float, Float, Float)]((80000, 8000, 2500), (82000, 6000, 2300)))
+    val incomes = calculator.calculate(List(FreelanceCriteria(turnover = 80000, fees = 8000, monthlySalary = 2500),
+      FreelanceCriteria(turnover = 82000, fees = 6000, monthlySalary = 2300)))
     incomes should be(List(Income(80000, 8000, 2500, 36755), Income(82000, 6000, 2300, 40142)))
   }
 

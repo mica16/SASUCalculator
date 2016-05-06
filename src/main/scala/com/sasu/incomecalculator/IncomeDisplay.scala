@@ -1,6 +1,6 @@
 package com.sasu.incomecalculator
 
-class IncomeDisplay(incomes: List[Income]) {
+/*class IncomeDisplay(incomes: List[Income]) {
 
   def display() {
     def traverse(incomes: List[Income]) {
@@ -18,11 +18,11 @@ class IncomeDisplay(incomes: List[Income]) {
 
   private def formatSalary(income: Income) = {
     s"${income.freelanceCost.round} euros/jour, ${income.charges.round} euros de frais, " +
-      s"${income.monthlySalary.round} de salaire net par mois, ${income.nbWorkDaysInAYear} jours travaillés : ${income.annualIncome.round}/an =>  ${income.monthlyIncome.round}/mois"
+      s"${income.monthlySalary.round} de salaire net par mois, ${income.nbWorkDaysInAYear} jours travaillés : ${income.annualIncome}/an =>  ${income.monthlyIncome.round}/mois"
   }
 
   private def jumpLine = {
     "\n"
   }
 
-}
+}*/

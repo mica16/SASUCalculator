@@ -21,11 +21,11 @@ class FreelanceCriteria(val turnover: Float, val fees: Float, val monthlySalary:
 
 object FreelanceCriteria {
 
-  def apply(turnover: Float, fees: Float, monthlySalary: Float) = {
+  def apply(turnover: Float, fees: Float, monthlySalary: Float): FreelanceCriteria = {
     new FreelanceCriteria(turnover, fees, monthlySalary)
   }
 
-  def apply(priceByDay: Float, nbYearlyWorkedDays: Float, fees: Float, monthlySalary: Float) = {
+  def apply(priceByDay: Float, nbYearlyWorkedDays: Float, fees: Float, monthlySalary: Float): FreelanceCriteria = {
     new FreelanceCriteria(priceByDay * nbYearlyWorkedDays, fees, monthlySalary)
   }
 

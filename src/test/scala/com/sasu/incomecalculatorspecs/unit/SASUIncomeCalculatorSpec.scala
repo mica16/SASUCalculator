@@ -19,7 +19,7 @@ class SASUIncomeCalculatorSpec extends FlatSpec with Matchers with MockitoSugar 
     })
     val calculator = new SASUIncomeCalculator(new DefaultDueAmountRulesBeforeIncomeTax(taxSocietyAmountMock), new DefaultIncomeTaxRules(taxIncomeAmountMock))
     val income = calculator.calculate(List(FreelanceCriteria(turnover = 80000, fees = 8000, monthlySalary = 2500)))
-    income should be(Income(80000, 8000, 2500, 36755))
+    income should be(List(Income(80000, 8000, 2500, 36755)))
   }
 
   "Income" should "equals 40142e/year for 82000, 6000, 2300" in {
@@ -31,7 +31,7 @@ class SASUIncomeCalculatorSpec extends FlatSpec with Matchers with MockitoSugar 
     })
     val calculator = new SASUIncomeCalculator(new DefaultDueAmountRulesBeforeIncomeTax(taxSocietyAmountMock), new DefaultIncomeTaxRules(taxIncomeAmountMock))
     val income = calculator.calculate(List(FreelanceCriteria(turnover = 82000, fees = 6000, monthlySalary = 2300)))
-    income should be(Income(82000, 6000, 2300, 40142))
+    income should be(List(Income(82000, 6000, 2300, 40142)))
   }
 
   it should "be able to process multiple simulations" in {

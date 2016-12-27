@@ -6,7 +6,7 @@ class AnnualSalary(monthlySalary: Float, costFn: Float => Float, taxAmountFn: Fl
 
   lazy val cost = costFn(amount)
 
-  def taxAmount = {
+  def taxAmount: Float = {
     taxAmountFn(amount)
   }
 
